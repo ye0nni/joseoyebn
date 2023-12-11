@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            background-size: cover;
+        }
+
+        nav img {
+            height: 40px;
+            margin-top: 15px;
+            margin-left: 15px;
+            width: auto;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            font-size: 16px;
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 20px 60px;
+            margin-top: 15px;
+            text-decoration: none;
+            color: rgb(75, 75, 75);
+            font-size: 12px;
+            text-align: center;
+            width: 40%;
+        }
+
+        nav a:hover {
+            color: rgb(1, 46, 8);
+        }
+
+        .logo-and-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .login-form {
+            text-align: center;
+            width: 70%;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 120px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 5;
+        }
+
+        p {
+            text-align: center;
+            line-height: 2;
+        }
+
+        .login-form button {
+            width: 40%;
+            line-height: -5fr;
+
+            padding: 12px;
+            background-color: #2e4d2f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+
+        }
+    </style>
+</head>
+<script>
+    function checkID() {
+        let s = document.getElementById("id").value;
+        if (s.length < 3) {
+            alert("아이디는 3글자 이상이어야 합니다.");
+        }
+    }
+
+    function greeting(name) {
+        alert(name + "님을 환영합니다.");
+    }
+
+    function getValue() {
+        let select = document.getElementById("address");
+        let s = select.value;
+
+        document.getElementById("result").value = s;
+    }
+</script>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo-and-nav">
+                <img src="logo.png" alt="Logo">
+                <a href="mainpage.html" id="HomeButton">Home</a>
+                <a href="#category">Category</a>
+                <a href="login.html" id="loginButton">Login</a>
+                <a href="#mypage">Mypage</a>
+            </div>
+        </nav>
+        <h1>회원가입</h1>
+        <form action="adduser.jsp" method="post">
+            <p>
+                이름: <input type="text" name="name"><br>
+                아이디 : <input type="text" id="id">
+                <button onclick="checkID()"> 검사 </button><br>
+                비밀번호 : <input type="password" name="password"><br>
+                email: <input type="email" name="email" required><br>
+                성별 :
+                <input type="radio" name="gender" value="male"> 남자
+                <input type="radio" name="gender" value="female"> 여자<br>
+                생년월일 : <input type="date" name="date" /><br />
+                주소
+                <select id="address" name="주소">
+                    <option value="서울">서울</option>
+                    <option value="부산">부산</option>
+                    <option value="경남">경남</option>
+                    <option value="경북">경북</option>
+                </select>
+                <input type="button" onclick="getValue()" value="상세주소">
+                <input type="text" id="result" value="">
+            </p>
+        </form>
+
+        <div class="login-form">
+            <form id="loginForm">
+                <button onclick="greeting('조서연')">회원가입하기</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

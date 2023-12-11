@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: beige;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 90vh;
+            background-size: cover;
+            margin: 0; 
+        }
+
+  
+
+nav img {
+            height: 40px; 
+            margin-top: 15px; 
+            margin-left: 15px;  
+            width: auto;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            font-size: 16px;
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 20px 60px; 
+            margin-top: 15px;
+            text-decoration: none;
+            color: rgb(75, 75, 75);
+            font-size: 12px;
+            text-align: center; 
+            width: 40%;
+        }
+
+        nav a:hover {
+            color: rgb(1, 46, 8);
+        }
+
+
+        .logo-and-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: px;
+        }
+        h3{
+            text-align: center;
+            padding-top: 120px;
+        
+
+        }
+
+
+        #orginButton {
+            background-color: #FBEDE0;
+            border-radius: 60%;
+            margin-left: 650px;
+            
+        }
+        #pinkButton {
+            background-color: pink;
+            border-radius: 60%;
+        }
+
+        #yellowButton {
+            background-color: yellow;
+            border-radius: 60%;
+        }
+
+        #greenButton {
+            background-color: green;
+            border-radius: 60%;
+            
+        }
+        .button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+button {
+    padding: 5px;
+    margin: 5px;
+    align-items: center;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.new-class {
+    text-align: left;
+    width: 50%;
+    max-width: 100%;
+    z-index: -2;
+
+}
+
+img {
+    max-width: 100%;
+    margin-left: 360px;
+        margin-top: 10px; 
+}
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo-and-nav">
+                <img src="logo.png" alt="Logo">
+                <a href="mainpage.html" id="HomeButton">Home</a>
+                <a href="#category">Category</a>
+                <a href="login.html" id="loginButton">Login</a>
+                <a href="#mypage">Mypage</a>
+            </div>
+        </nav>
+        <h3>나만의 화장품</h3>
+        <audio id="buttonSound">
+            <source src="audio.mp3" type="audio/mp3">
+            <!-- 다른 오디오 포맷에 대한 소스 태그도 추가할 수 있습니다. -->
+        </audio>
+        <div class="button-container">
+            <button id="orginButton" onclick="changeImage('toner.png'); playButtonSound()">&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button id="pinkButton" onclick="changeImage('pink.png'); playButtonSound()">&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button id="yellowButton" onclick="changeImage('yellow.png'); playButtonSound()">&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button id="greenButton" onclick="changeImage('green.png'); playButtonSound()">&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </div>
+    
+        <div class="image-container">
+            <img id="toner" src="toner.png" style="width:50%">
+            
+            <div class="new-class">
+            </div>
+        </div>
+    
+        <script>
+            function changeImage(imagePath) {
+                var tonerImage = document.getElementById('toner');
+                tonerImage.src = imagePath;
+                tonerImage.style.width = '50%';
+                tonerImage.classList.add('new-class');
+            }
+        </script>
+        </body>
+</html>
+
